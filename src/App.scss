@@ -1,0 +1,156 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Variable Declarations
+========================================================================== */
+
+// Palette
+$white: #fff;
+$black: #000;
+
+$primary-blue: #003580;
+$secondary-blue: #2B8CDF;
+$light-blue: #124389;
+$lighter-blue: #1F4E8F;
+
+$primary-red: #FF0202;
+
+$light-gray: #F2F2F2;
+
+// Font
+$h1: 2rem;
+$h4: 1.25rem;
+$p: 1rem;
+$small: 0.875rem;
+
+// Responsive Breakpoints
+$XS: 375px;
+$S: 599px;
+$M: 899px;
+$L: 1299px;
+$XL: 1679px;
+
+/* ==========================================================================
+   Base Styles
+========================================================================== */
+h1{
+  font-size: $h1;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: $M) {
+    font-size: 1.5rem;
+  }
+}
+
+h4{
+  font-size: $h4;
+  font-weight: normal;
+  @media screen and (max-width: $M) {
+    font-size: 1rem;
+  }
+}
+
+p{
+  font-size: $p;
+  @media screen and (max-width: $M) {
+    font-size: 0.875rem;
+  }
+}
+
+small{
+  font-size: $small;
+  @media screen and (max-width: $M) {
+    font-size: 0.75rem;
+  }
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  font-size: $p;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 0;
+  margin-bottom: 1rem;
+  background: $light-blue;
+  border: 1px solid $primary-blue;
+  transition: 0.3s ease;
+
+  &:hover{
+     transform: translateY(-5px);
+     background: $lighter-blue;
+  }
+}
+
+/* ==========================================================================
+   Custom Container
+========================================================================== */
+.custom-container {
+  max-width: 1560px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: $XL) {
+     margin-left: 3.75rem;
+     margin-right: 3.75rem;
+  }
+
+  @media screen and (max-width: $L) {
+     margin-left: 3.75rem;
+     margin-right: 3.75rem;
+  }
+
+  @media screen and (max-width: $M) {
+     margin-left: 1.5rem;
+     margin-right: 1.5rem;
+  }
+
+  @media screen and (max-width: $S) {
+     margin-left: 1rem;
+     margin-right: 1rem;
+  }
+}
+
+.row.custom-gutter {
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+
+  @media screen and (max-width: $L) {
+     margin-left: 1.25rem;
+     margin-right: 1.25rem;
+  }
+
+  @media screen and (max-width: $M) {
+     margin-left: 0.75rem;
+     margin-right: 0.75rem;
+  }
+
+  @media screen and (max-width: $S) {
+     margin-left: 0.5rem;
+     margin-right: 0.5rem;
+  }
+}
+
+.row.custom-gutter>div {
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+
+  @media screen and (max-width: $L) {
+     padding-left: 1.25rem;
+     padding-right: 1.25rem;
+  }
+
+  @media screen and (max-width: $M) {
+     padding-left: 0.75rem;
+     padding-right: 0.75rem;
+  }
+
+  @media screen and (max-width: $S) {
+     padding-left: 0.5rem;
+     padding-right: 0.5rem;
+  }
+}
