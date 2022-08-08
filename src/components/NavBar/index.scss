@@ -1,0 +1,72 @@
+@import "../../App.scss";
+
+.Header{
+    background: $primary-blue;
+    color: $white;
+
+    .SubHeader{
+        display: flex;
+        padding: 1rem 0;
+
+        >div{
+            display: flex;
+            align-items: center;  
+        }
+
+        &.SubHeaderTop{
+            justify-content: space-between;
+
+            hr{
+                height: 30px;
+                border: 1px solid;
+                margin: 0 1rem;
+            }
+
+            .User{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-left: 2rem;
+
+                .UserIcon{ 
+                    width: 30px;
+                    height: 30px;
+                    margin-bottom: 2px;
+
+                    &.UserImage{
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                }
+
+                
+            }
+        }
+
+        &.SubHeaderBottom {
+            padding-bottom: 0;
+            justify-content: center;
+
+            .NavItem{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+
+                .NavIcon{
+                    height: 30px;
+                    width: auto;
+                    margin-bottom: 2px;
+                }
+
+                &:hover{
+                    background: $lighter-blue;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+    }
+
+    
+}
