@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 
-import SeachInput from '../SearchInput';
+import InputSearch from '../InputSearch';
 
 import { IoHomeOutline, IoRocketOutline, IoDocumentOutline } from "react-icons/io5";
 import { BsPen, BsBarChartLine } from "react-icons/bs";
@@ -20,7 +20,7 @@ const NavBar = () => {
                     <h4 className=''>Argakhanchi Hotel - 8706497</h4>
                 </div>
                 <div>
-                    <SeachInput placeholder="Search for reservations" />
+                    <InputSearch variantBlue={true} showIcon={true} placeholder="Search for reservations" />
                     <div className='User'>
                         <img className='UserIcon UserImage' src="https://picsum.photos/200/300?grayscale" alt="" />
                         <small>Argakha...</small>

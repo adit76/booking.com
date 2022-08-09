@@ -1,0 +1,11 @@
+@use '../../App';
+
+.CheckBox{
+    .CheckItem{
+        padding: 1px 0;
+
+        label{
+            margin-left: 0.5rem;
+        }
+    }
+}
