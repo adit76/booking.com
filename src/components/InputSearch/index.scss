@@ -1,0 +1,45 @@
+@use "../../App";
+
+.InputContainer {
+    position: relative;
+    color: App.$dark-gray;
+
+    input {
+        font-size: App.$small;
+        padding: 1rem;
+        padding-right: 2rem;
+        outline: none;
+        border: none;
+        background: transparent;
+    }
+
+    ::placeholder {
+        color: App.$black;
+        opacity: 1; 
+    }
+
+    .Icon{
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        font-size: App.$h4;
+    }
+
+    &.InputBlue {
+        color: App.$white;
+        background: App.$lighter-blue;
+
+        input{
+            color: inherit; 
+
+            &::placeholder{
+                color: App.$white;
+                opacity: 1;
+            }
+        }
+
+        
+    }
+}

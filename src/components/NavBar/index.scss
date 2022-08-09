@@ -1,8 +1,8 @@
-@import "../../App.scss";
+@use "../../App";
 
 .Header{
-    background: $primary-blue;
-    color: $white;
+    background: App.$primary-blue;
+    color: App.$white;
 
     .SubHeader{
         display: flex;
@@ -46,23 +46,23 @@
         &.SubHeaderBottom {
             padding-bottom: 0;
             justify-content: center;
+        }
 
-            .NavItem{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem;
+        .NavItem{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
 
-                .NavIcon{
-                    height: 30px;
-                    width: auto;
-                    margin-bottom: 2px;
-                }
+            .NavIcon{
+                height: 30px;
+                width: auto;
+                margin-bottom: 2px;
+            }
 
-                &:hover{
-                    background: $lighter-blue;
-                    cursor: pointer;
-                }
+            &:hover{
+                background: App.$lighter-blue;
+                cursor: pointer;
             }
         }
         

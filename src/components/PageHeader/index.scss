@@ -1,0 +1,25 @@
+@use "../../App";
+
+.SectionHeader{
+    display: flex;
+    justify-content: space-between;
+
+    .HeaderAttributes{
+        display: flex;
+        button{
+            display: flex;
+            align-items: center;
+            background: transparent;
+            border: none;
+            outline: none;
+            margin-left: 2rem;
+            color: App.$dark-gray;
+            font-size: App.$small;
+            cursor: pointer;
+
+            .BtnIcon{
+                margin-right: 0.25rem;
+            }
+        }
+    }
+}
