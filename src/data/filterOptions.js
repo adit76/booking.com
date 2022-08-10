@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const filterOptions =  {
+    // Reservation Page
     reservationType: [
         {
             id: 0,
@@ -82,7 +83,56 @@ const filterOptions =  {
                     name: "Pending",
                 }
         ] 
-    }
+    },
+
+    // Calendar Page
+    roomType: [
+        {
+            id: 0,
+            value: "All Rooms",
+            name: "All Rooms"
+        },
+        {
+            id: uuidv4(),
+            value: "db02",
+            name: "Big deluxe Double Bed"
+        },
+        {
+            id: uuidv4(),
+            value: "sb01",
+            name: "Super Luxury Single Bed"
+        }
+    ],
+    view: [
+        {
+            id: 1,
+            value: "list",
+            name: "List View"
+        },
+        {
+            id: 2,
+            value: "grid",
+            name: "Grid View"
+        },
+        {
+            id: 3,
+            value: "table",
+            name: "Table View"
+        }
+    ],
+    calendarOptions: [
+        {
+            id: 1,
+            value: "pricing",
+            name: "Pricing Per Guests"
+        },
+        {
+            id: 2,
+            value: "restrictions",
+            name: "Restrictions"
+        }
+    ]
+
 }
 
 export default filterOptions;

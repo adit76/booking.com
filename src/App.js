@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import NavBar from './components/NavBar';
 import Reservations from './pages/Reservations';
-import Rates from './pages/Rates';
+import Calendar from './pages/Calendar';
 import Footer from './components/Footer';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Reservations />} />
-        <Route path="rates" element={<Rates />} />
+        <Route path="calendar" element={<Calendar />} />
       </Routes>
 
       <Footer />
