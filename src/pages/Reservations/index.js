@@ -36,7 +36,12 @@ const Reservations = () => {
 
     // Handle Change Function for Input Fields
     const handleChange = (e) => {
-        setFilter({...filter, dateOf: e.target.value })
+        const { name, value } = e.target;
+
+        setFilter((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
     }
 
     // Filter Function
@@ -49,8 +54,6 @@ const Reservations = () => {
         });
 
         setFilteredGuests(filteredData);
-
-        console.log(filter.dateFrom, filter.dateTo)
     }
 
   return (

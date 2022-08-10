@@ -44,7 +44,7 @@ const NavBar = () => {
                     <small>Home</small>
                 </div>
                 <NavLink  
-                    to="/rates" 
+                    to="/calendar" 
                     className={({ isActive }) =>
                     isActive ? 'Active' : undefined }
                 >
