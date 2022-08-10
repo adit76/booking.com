@@ -3,6 +3,11 @@ import React from 'react';
 
 
 const Table = ({ guestsList }) => {
+    const formatDate = (string) => {
+        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(string).toLocaleDateString([],options);
+    }
+
     return (
             <table>
                 <thead>
@@ -22,10 +27,10 @@ const Table = ({ guestsList }) => {
                     {guestsList.map((guest) => (
                         <tr key={guest.bookingNumber}>
                             <td><a href="#">{guest.guestName}</a> <br /> <small>{guest.noOfGuests} guests</small></td>
-                            <td>{guest.checkIn}</td>
-                            <td>{guest.checkout}</td>
+                            <td>{formatDate(guest.checkIn)}</td>
+                            <td>{formatDate(guest.checkout)}</td>
                             <td>{guest.room}</td>
-                            <td>{guest.bookedOn}</td>
+                            <td>{formatDate(guest.bookedOn)}</td>
                             <td>{guest.status}</td>
                             <td>US${guest.price}</td>
                             <td>US${guest.commission}</td>
