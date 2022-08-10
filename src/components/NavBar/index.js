@@ -1,5 +1,7 @@
 import React from 'react';
 import './index.scss';
+import { NavLink  } from "react-router-dom";
+
 
 import InputSearch from '../InputSearch';
 
@@ -10,6 +12,7 @@ import { AiOutlineCalendar, AiOutlineUnorderedList, AiOutlineTag, AiOutlineMail,
 
 
 const NavBar = () => {
+
   return (
     <header className='Header'>
         <div className='CustomContainer'>
@@ -40,18 +43,30 @@ const NavBar = () => {
                     <IoHomeOutline className='NavIcon' />
                     <small>Home</small>
                 </div>
-                <div className='NavItem'>
-                    <AiOutlineCalendar className='NavIcon' />
-                    <small>Rate & Availability</small>
-                </div>
+                <NavLink  
+                    to="/rates" 
+                    className={({ isActive }) =>
+                    isActive ? 'Active' : undefined }
+                >
+                    <div className='NavItem'>
+                        <AiOutlineCalendar className='NavIcon' />
+                        <small>Rate & Availability</small>
+                    </div>
+                </NavLink >
                 <div className='NavItem'>
                     <AiOutlineTag className='NavIcon' />
                     <small>Promotions</small>
                 </div>
-                <div className='NavItem'>
-                    <AiOutlineUnorderedList className='NavIcon' />
-                    <small>Reservations</small>
-                </div>
+                <NavLink  
+                    to="/"
+                    className={({ isActive }) =>
+                    isActive ? 'Active' : undefined }
+                >
+                    <div className='NavItem'>
+                        <AiOutlineUnorderedList className='NavIcon' />
+                        <small>Reservations</small>
+                    </div>
+                </NavLink >
                 <div className='NavItem'>
                     <BsPen className='NavIcon' />
                     <small>Property</small>

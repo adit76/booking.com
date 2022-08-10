@@ -48,6 +48,16 @@
             justify-content: center;
         }
 
+        a {
+            color: App.$white;
+            text-decoration: none;
+
+            &.Active{
+                border-bottom: 5px solid App.$secondary-blue;
+                background: App.$lighter-blue;
+            }
+        }
+
         .NavItem{
             display: flex;
             flex-direction: column;
@@ -65,6 +75,8 @@
                 cursor: pointer;
             }
         }
+
+        
         
     }
 
