@@ -119,7 +119,38 @@ const Reservations = () => {
             commission: 16.20,
             bookingNumber: uuidv4()
         },
+        {
+            guestName: "S Kraswo",
+            noOfGuests: 2,
+            checkIn: "13 Jul 2022",
+            checkout: "16 Jul 2022",
+            room: "Single Room",
+            bookedOn: "10 Jul 2022",
+            status: "Ok",
+            price: 135,
+            commission: 16.20,
+            bookingNumber: uuidv4()
+        },
+        {
+            guestName: "S Kraswo",
+            noOfGuests: 2,
+            checkIn: "13 Jul 2022",
+            checkout: "16 Jul 2022",
+            room: "Single Room",
+            bookedOn: "10 Jul 2022",
+            status: "Ok",
+            price: 135,
+            commission: 16.20,
+            bookingNumber: uuidv4()
+        },
     ])
+
+    const [moreFilterStatus, setMoreFilterStatus] = useState(false);
+
+    const moreFilterDropdown = () => {
+        setMoreFilterStatus(!moreFilterStatus)
+        console.log("Dropdown Clicked")
+    }
 
     console.log(filter.dateFrom)
 
@@ -143,30 +174,32 @@ const Reservations = () => {
             </div>
 
             <div className="FormGroup">
-                <button className='Btn'>More Filters <FiChevronDown /></button>
+                <button className="Btn" onClick={moreFilterDropdown}>More Filters <FiChevronDown style={{transform: moreFilterStatus ? 'rotate(180deg)' : 'none', transition: "0.3s ease"}} /></button>
             </div>
             <div className="FormGroup">
                 <button className='Btn BtnBlue'>Show</button>
             </div>
         </section>
 
-        {/* More Filter Section */}
-        <section className="MoreFilters">
-            <div className="FormGroup">
-                <InputCheckBox name="reservationStatus" title="Reservation Status" options={filter.moreFilter.reservationStatus} />
-            </div>
-            <div className="FormGroup">
-                <InputCheckBox name="guestCommunication" title="Guest Communication" options={filter.moreFilter.guestCommunication} />
-            </div>
-            <div className="FormGroup">
-                <InputCheckBox name="invalidCreditCard" title="Invalid Credit Card" options={filter.moreFilter.invalidCreditCard} />
-            </div>
+        <section className="MoreFilters" style={{maxHeight: moreFilterStatus ? '500px' : '0'}}>
+            <div className='FilterWrapper'>
+                <div className="FormGroup">
+                    <InputCheckBox name="reservationStatus" title="Reservation Status" options={filter.moreFilter.reservationStatus} />
+                </div>
+                <div className="FormGroup">
+                    <InputCheckBox name="guestCommunication" title="Guest Communication" options={filter.moreFilter.guestCommunication} />
+                </div>
+                <div className="FormGroup">
+                    <InputCheckBox name="invalidCreditCard" title="Invalid Credit Card" options={filter.moreFilter.invalidCreditCard} />
+                </div>
 
-            <div className="FormGroup">
-                <p>Search</p>
-                <InputSearch placeholder="Keywords (Optional)" />
+                <div className="FormGroup">
+                    <p>Search</p>
+                    <InputSearch placeholder="Keywords (Optional)" />
+                </div>
             </div>
         </section>
+        
 
         {/* Reservation User List Section */}
         <section className="UserList">

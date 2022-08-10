@@ -8,9 +8,15 @@
     }
 
     .MoreFilters{
-        display: flex;
-        padding: 2rem;
         background: App.$white;
+        max-height: 500px;
+        transition: 0.3s ease;
+        overflow: hidden;
+
+        .FilterWrapper{
+            display: flex;
+            padding: 2rem;
+        }
 
         .FormGroup{
             margin-right: 2rem;
@@ -24,6 +30,12 @@
 
             input{
                 font-size: App.$small;
+            }
+
+            .Btn {
+                .BtnIcon {
+                    transition: 0.3s ease;
+                }
             }
         }
     }
