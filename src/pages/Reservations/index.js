@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import DatePicker from "react-datepicker";
+// Dummy Data 
 import filterOptions from '../../data/filterOptions';
 import guestsList from '../../data/guestsLists';
 
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './index.scss';
 
 import { FiChevronDown } from "react-icons/fi";
 
+// Components
 import PageHeader from '../../components/PageHeader';
 import InputSelect from '../../components/InputSelect';
 import InputCheckBox from '../../components/InputCheckBox';
@@ -16,24 +18,43 @@ import Table from '../../components/Table';
 
 const Reservations = () => {
 
+    // Active Filter State
     const [filter, setFilter] = useState({
         dateOf: '--',
         dateFrom: new Date(),
         dateTo: new Date(),
     })
 
-    const [moreFilterStatus, setMoreFilterStatus] = useState(false);
+    // Guests List state with Filter Function
+    const [filteredGuests, setFilteredGuests] = useState(guestsList);
 
+    // More Filter Function
+    const [moreFilterStatus, setMoreFilterStatus] = useState(false);
     const moreFilterDropdown = () => {
         setMoreFilterStatus(!moreFilterStatus)
     }
 
+    // Handle Change Function for Input Fields
     const handleChange = (e) => {
         setFilter({...filter, dateOf: e.target.value })
     }
 
+    // Filter Function
+    // Note: Only based on Check-In Date for now
+    const filterFunction = () => {
+
+        const filteredData = guestsList.filter(item => {
+            var date = new Date(item.checkIn);
+            return (date >= filter.dateFrom && date <= filter.dateTo);
+        });
+
+        setFilteredGuests(filteredData);
+
+        console.log(filter.dateFrom, filter.dateTo)
+    }
+
   return (
-    <div className='Reservations CustomContainer'>
+    <div className='Reservations CustomContainer'>  
         {/* Header Section */}
         <PageHeader title="Reservations" headerAttributttes={true} />
 
@@ -55,7 +76,7 @@ const Reservations = () => {
                 <button className="Btn" onClick={moreFilterDropdown}>More Filters <FiChevronDown style={{transform: moreFilterStatus ? 'rotate(180deg)' : 'none', transition: "0.3s ease"}} /></button>
             </div>
             <div className="FormGroup">
-                <button className='Btn BtnBlue'>Show</button>
+                <button className='Btn BtnBlue' onClick={filterFunction}>Show</button>
             </div>
         </section>
         
@@ -81,7 +102,7 @@ const Reservations = () => {
         
         {/* Reservation User List Section */}
         <section className="UserList">
-            <Table guestsList={guestsList} />
+            <Table guestsList={filteredGuests} />
         </section>
 
     </div>
