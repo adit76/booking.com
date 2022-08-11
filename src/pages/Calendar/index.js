@@ -5,8 +5,7 @@ import "./index.scss";
 // Components
 import PageHeader from '../../components/PageHeader';
 import InputSelect from '../../components/InputSelect';
-import InputCheckBox from '../../components/InputCheckBox';
-
+import CalendarTimeline from '../../components/CalendarTimeline';
 
 const Rates = () => {
     const [filter, setFilter] = useState({
@@ -40,11 +39,10 @@ const Rates = () => {
                         <InputSelect id="view"  options={filterOptions.view} value={filter.view} handleChange={handleChange} />
                     </div>
                 </div>
-                <div className="FilterBottom">
-                    <div className="FormGroup">
-                        <InputCheckBox name="calendarOptions" options={filterOptions.calendarOptions} />
-                    </div>
-                </div>
+            </section>
+
+            <section className='CalendarTimeline'>
+                <CalendarTimeline />
             </section>
         </div> 
     );
